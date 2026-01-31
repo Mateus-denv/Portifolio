@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mateus de J. Santos | Portfólio</title>
+
+  <!-- Fonte estilo Apple -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-color: #0a0a0a;
+      --text-color: #f5f5f7;
+      --secondary-text: #a1a1a6;
+      --card-bg: #1a1a1a;
+      --accent: #00ffff;
+      --accent-hover: #00d4d4;
+      --border-color: rgba(0, 255, 255, 0.2);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Background animado na seção hero */
+    .hero-background {
+      position: relative;
+      background: #000000;
+      overflow: hidden;
+    }
+
+    /* Canvas de fundo com efeito Matrix */
+    #matrix-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.15;
+      pointer-events: none;
+    }
+
+    /* Linhas de código animadas */
+    .code-lines {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .code-line {
+      position: absolute;
+      font-family: 'Fira Code', monospace;
+      color: #00ffff;
+      font-size: 14px;
+      white-space: nowrap;
+      opacity: 0;
+      animation: slideCode 8s infinite;
+    }
+
+    @keyframes slideCode {
+      0% {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      10% {
+        opacity: 0.7;
+      }
+      90% {
+        opacity: 0.7;
+      }
+      100% {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+    }
+
+    /* Grid pattern overlay */
+    .grid-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 50px 50px;
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+
+    .scroll-indicator span {
+      display: block;
+      width: 30px;
+      height: 50px;
+      border: 2px solid #00ffff;
+      border-radius: 15px;
+      position: relative;
+    }
+
+    .scroll-indicator span::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 6px;
+      background: #00ffff;
+      border-radius: 50%;
+      animation: scroll 2s infinite;
+    }
+
+    @keyframes scroll {
+      0% {
+        top: 10px;
+        opacity: 1;
+      }
+      100% {
+        top: 30px;
+        opacity: 0;
+      }
+    }
+
+    header {
+      position: relative;
+      z-index: 100;
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hero-background header h1 {
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1.2rem;
+      font-family: 'Fira Code', monospace;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-background header h1::before {
+      content: '< ';
+      color: var(--accent);
+    }
+
+    .hero-background header h1::after {
+      content: ' />';
+      color: var(--accent);
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 20px;
+      position: relative;
+    }
+
+    .hero {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 150px 20px 120px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero h2 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #ffffff;
+      text-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    }
+
+    .hero p {
+      color: #f5f5f7;
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    /* Estilização das seções */
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      font-weight: 600;
+      color: var(--accent);
+      font-family: 'Fira Code', monospace;
+      position: relative;
+      display: inline-block;
+    }
+
+    h3::before {
+      content: '// ';
+      color: var(--secondary-text);
+      font-size: 1.5rem;
+    }
+
+    h3::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      transform-origin: left;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+      box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
+    }
+
+    .card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .card h4 {
+      color: var(--accent);
+      margin-bottom: 12px;
+      font-family: 'Fira Code', monospace;
+      font-size: 1.1rem;
+    }
+
+    .card h4::before {
+      content: '{ ';
+      color: var(--secondary-text);
+    }
+
+    .card h4::after {
+      content: ' }';
+      color: var(--secondary-text);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      margin-bottom: 12px;
+      color: var(--secondary-text);
+      padding-left: 20px;
+      position: relative;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.95rem;
+    }
+
+    ul li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* Seção sobre mim */
+    .about-text {
+      color: var(--secondary-text);
+      max-width: 800px;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      padding: 25px;
+      background: var(--card-bg);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+    }
+
+    /* Links */
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s;
+      font-family: 'Fira Code', monospace;
+    }
+
+    a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s;
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+    }
+
+    a:hover::after {
+      width: 100%;
+    }
+
+    /* Seção de contato */
+    .contact-info {
+      padding: 30px;
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      max-width: 600px;
+    }
+
+    .contact-info p {
+      line-height: 2;
+      font-family: 'Fira Code', monospace;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--secondary-text);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border-color);
+      font-family: 'Fira Code', monospace;
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 1px;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    /* Animação de entrada */
+    section {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    section:nth-child(2) { animation-delay: 0.1s; }
+    section:nth-child(3) { animation-delay: 0.2s; }
+    section:nth-child(4) { animation-delay: 0.3s; }
+    section:nth-child(5) { animation-delay: 0.4s; }
+    section:nth-child(6) { animation-delay: 0.5s; }
+    section:nth-child(7) { animation-delay: 0.6s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Scroll suave */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Barra de rolagem personalizada */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0a0a0a;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-hover);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Seção Hero com Background Animado -->
+  <div class="hero-background">
+    <canvas id="matrix-canvas"></canvas>
+    <div class="grid-overlay"></div>
+    <div class="code-lines" id="code-lines"></div>
+
+    <header>
+      <h1>Mateus de J. Santos</h1>
+    </header>
+
+    <section class="hero">
+      <h2>Estudante de Desenvolvimento de Sistemas</h2>
+      <p>
+        Construindo uma jornada profissional sólida através da tecnologia,
+        criando soluções eficientes, modernas e bem estruturadas.
+      </p>
+    </section>
+
+    <div class="scroll-indicator">
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Restante do conteúdo -->
+  <section>
+    <h3>Sobre mim</h3>
+    <p class="about-text">
+      Meu nome é Mateus de J. Santos, sou estudante de Desenvolvimento de Sistemas no SENAI.
+      Além da formação acadêmica, busco constantemente aprimorar minhas hard skills e soft skills
+      por meio de estudos e projetos pessoais, com foco em desenvolver soluções eficientes e de qualidade.
+    </p>
+  </section>
+
+  <section>
+    <h3>Projetos</h3>
+    <div class="grid">
+      <div class="card">
+        <h4>Projeto 1</h4>
+        <p style="color: var(--secondary-text);">Descrição breve do projeto com tecnologias utilizadas e funcionalidades principais.</p>
+      </div>
+      <div class="card">
+        <h4>Projeto 2</h4>
+        <p style="color: var(--secondary-text);">Descrição breve do projeto com tecnologias utilizadas e funcionalidades principais.</p>
+      </div>
+      <div class="card">
+        <h4>Projeto 3</h4>
+        <p style="color: var(--secondary-text);">Descrição breve do projeto com tecnologias utilizadas e funcionalidades principais.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Hard Skills</h3>
+    <div class="grid">
+      <div class="card">
+        <h4>Frontend</h4>
+        <ul>
+          <li>HTML5 & CSS3</li>
+          <li>JavaScript ES6+</li>
+          <li>Responsive Design</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Backend</h4>
+        <ul>
+          <li>C# / .NET</li>
+          <li>SQL Server</li>
+          <li>RESTful APIs</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Ferramentas</h4>
+        <ul>
+          <li>Git & GitHub</li>
+          <li>Visual Studio</li>
+          <li>VS Code</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Soft Skills</h3>
+    <div class="grid">
+      <div class="card">
+        <ul>
+          <li>Comunicação efetiva</li>
+          <li>Trabalho em equipe</li>
+          <li>Organização e planejamento</li>
+          <li>Aprendizado contínuo</li>
+          <li>Resolução de problemas</li>
+          <li>Adaptabilidade</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Certificados</h3>
+    <div class="grid">
+      <div class="card">
+        <ul>
+          <li>Desenvolvimento de Sistemas — SENAI (em andamento)</li>
+          <li>Lógica de Programação — SENAI</li>
+          <li>Fundamentos de Banco de Dados</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Contato</h3>
+    <div class="contact-info">
+      <p>
+        <strong style="color: var(--accent);">Email:</strong><br>
+        <a href="mailto:seuemail@email.com">seuemail@email.com</a>
+      </p>
+      <p style="margin-top: 15px;">
+        <strong style="color: var(--accent);">GitHub:</strong><br>
+        <a href="https://github.com/seuusuario" target="_blank">github.com/seuusuario</a>
+      </p>
+      <p style="margin-top: 15px;">
+        <strong style="color: var(--accent);">LinkedIn:</strong><br>
+        <a href="https://linkedin.com/in/seuperfil" target="_blank">linkedin.com/in/seuperfil</a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 — Desenvolvido por Mateus de J. Santos</p>
+    <p style="margin-top: 10px; font-size: 0.8rem;">console.log("Obrigado pela visita! 🚀");</p>
+  </footer>
+
+  <script>
+    // Efeito Matrix
+    const canvas = document.getElementById('matrix-canvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = document.querySelector('.hero-background').offsetHeight;
+
+    const letters = '01';
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      ctx.fillStyle = '#00ffff';
+      ctx.font = fontSize + 'px monospace';
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    setInterval(drawMatrix, 50);
+
+    // Criar linhas de código
+    const codeSnippets = [
+      'function createAwesome() { return true; }',
+      'const skills = [\'HTML\', \'CSS\', \'JavaScript\'];',
+      'while(coding) { keepLearning(); }',
+      'if (dedicated) { success(); }',
+      'console.log("Hello World!");',
+      'npm install creativity',
+      'git commit -m "Building dreams"'
+    ];
+
+    const codeLinesContainer = document.getElementById('code-lines');
+    
+    function createCodeLine() {
+      const codeLine = document.createElement('div');
+      codeLine.className = 'code-line';
+      codeLine.textContent = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
+      codeLine.style.top = Math.random() * 80 + 10 + '%';
+      codeLine.style.animationDelay = Math.random() * 3 + 's';
+      codeLinesContainer.appendChild(codeLine);
+
+      setTimeout(() => {
+        codeLine.remove();
+      }, 8000);
+    }
+
+    setInterval(createCodeLine, 3000);
+    createCodeLine();
+
+    // Redimensionar canvas
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = document.querySelector('.hero-background').offsetHeight;
+    });
+  </script>
+
+</body>
+</html>
