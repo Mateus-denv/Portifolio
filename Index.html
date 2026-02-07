@@ -1,214 +1,273 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mateus de J. Santos | Portfólio</title>
 
-  <!-- Fonte estilo Apple -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/base.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de João Silva, Estudante de Desenvolvimento de Sistemas. Projetos em HTML, CSS e JavaScript.">
+    
+    <title>João Silva - Portfólio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/base.css">
+
 </head>
+
 <body>
-  <!-- Seção Hero com Background Animado -->
-  <div class="hero-background">
-    <canvas id="matrix-canvas"></canvas>
-    <div class="grid-overlay"></div>
-    <div class="code-lines" id="code-lines"></div>
-      <!-- Menu de Navegação -->
-    <nav class="nav-menu">
-        <a href="#sobre">Sobre</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#skills">Skills</a>
-        <a href="#certificados">Certificados</a>
-        <a href="#contato">Contato</a>
-    </nav>
-    <header>
-      <div class="profile">
-        <div class="profile-content">
-          <h1>
-            Olá, eu sou o<br>
-            <span id="typing-name" class="name-highlight"></span>
-          </h1>
-          <p class="profile-subtitle">
-            <span id="typing-role"></span>
-          </p>
-          
-          <div class="profile-buttons">
-            <a href="#" class="btn-primary">Download CV</a>
-            <a href="#contato" class="btn-secondary">Entrar em contato</a>
-          </div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Ms<span>.</span></a>
+            <div class="nav-menu">
+                <a href="#sobre">Sobre</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#skills">Skills</a>
+                <a href="#contato">Contato</a>
+            </div>
         </div>
-        
-        <img src="/WhatsApp Image 2026-02-04 at 7.15.27 PM.jpeg" alt="foto de perfil" class="profile-picture"/>
-      </div>
+    </nav>
+
+    <!-- HERO / PROFILE -->
+    <header id="hero">
+        <div class="profile">
+            <div class="profile-content">
+                <h1>Olá, eu sou</h1>
+                <div class="name-highlight">Mateus de J. Santos<span>.</span></div>
+                <div class="profile-subtitle">
+                    Desenvolvedor <span id="typing-role">Front-end</span>
+                </div>
+                <div class="profile-buttons">
+                    <a href="#projetos" class="btn-primary">Ver Projetos</a>
+                    <a href="#contato" class="btn-secondary">Contato</a>
+                </div>
+            </div>
+            <img src="./img/Perfil.jpeg" alt="Foto de Perfil" class="profile-picture">
+        </div>
     </header>
 
-<!-- Restante do conteúdo -->
-  <section id="sobre">
-    <h3>Sobre mim</h3>
-    <div class="about-container">
-      <p class="about-text">
-        Sou estudante de <strong style="color: var(--accent);">Desenvolvimento de Sistemas no SENAI.</strong>
-      </p>
-      <p class="about-text">
-        Construindo uma jornada profissional sólida através da tecnologia,
-        criando soluções eficientes, modernas e bem estruturadas. Tenho paixão por resolver problemas complexos
-        e transformar ideias em código funcional.
-      </p>
-      <p class="about-text">
-        Além da formação acadêmica, busco constantemente aprimorar minhas hard skills e soft skills
-        por meio de estudos e projetos pessoais, com foco em desenvolver soluções eficientes e de qualidade.
-        Estou sempre em busca de novos desafios e oportunidades de aprendizado.
-      </p>
-      
-      <div class="about-highlights">
-        <div class="highlight-item">
-          <span class="highlight-number">2+</span>
-          <span class="highlight-label">Anos de Estudo</span>
+    <main>
+        <!-- SOBRE -->
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        Atualmente cursando <strong>Técnico em Desenvolvimento de Sistemas</strong> no SENAI, dedico-me ao aprimoramento contínuo de minhas <em>hard</em> e <em>soft skills</em>. Meu foco principal reside no <strong>Desenvolvimento Back-end</strong>, <strong>Dados</strong> e <strong>Inteligência Artificial</strong>, áreas onde aplico minha paixão por lógica, estruturação de sistemas e resolução de problemas.
+                    </p>
+                    <p>
+                        Tenho grande interesse em <strong>Banco de Dados (DBA)</strong>, <strong>Power BI</strong> e <strong>Business Intelligence</strong>. Meu planejamento acadêmico inclui a graduação em <strong>Engenharia de Software</strong>, visando uma futura especialização em <strong>Machine Learning</strong>.
+                    </p>
+                    <p>
+                        Sou um profissional <strong>dedicado</strong> e <strong>proativo</strong>, focado em entregar soluções <strong>robustas</strong>, <strong>escaláveis</strong> e inovadoras. Fora do ambiente profissional, sou movido pelo aprendizado constante, esportes como musculação e basquete, e o universo dos jogos e filmes.
+                    </p>
+                </div>
+                <div class="about-highlights">
+                    <article class="highlight-item">
+                        <span class="highlight-number">3+</span>
+                        <span class="highlight-label">Anos de Experiência</span>
+                    </article>
+                    <article class="highlight-item">
+                        <span class="highlight-number">20+</span>
+                        <span class="highlight-label">Projetos Entregues</span>
+                    </article>
+                    <article class="highlight-item">
+                        <span class="highlight-number">100%</span>
+                        <span class="highlight-label">Foco em Qualidade</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETOS: ESTILO 2D MODERNO -->
+        <section id="projetos">
+            <h2>Projetos Selecionados</h2>
+            <div class="projects-grid">
+                
+                <!-- Projeto 1: Voga Stock -->
+                <article class="project-card">
+                    <img src="./img/VogaStock.png" alt="Voga Stock Cover">
+                    
+                    <!-- Título Padrão (Sem Hover) -->
+                    <div class="card-title-default">
+                        <h3>Voga Stock</h3>
+                        <span>Linguagem C</span>
+                    </div>
+
+                    <!-- Overlay de Detalhes (Hover) -->
+                    <div class="card-overlay">
+                        <h3>Voga Stock</h3>
+                        <p>Sistema de gerenciamento de estoque em C. Controle de entrada/saída, relatórios e persistência de dados.</p>
+                        <div class="card-tech-list">
+                            <span>C</span>
+                            <span>Structs</span>
+                            <span>Arquivos</span>
+                        </div>
+                        <div class="card-buttons">
+                            <a href="https://github.com/seuusuario/voga-stock" target="_blank" class="btn-small-git">
+                                GitHub
+                            </a>
+                            <button class="btn-small-details" onclick="openModal('project1')">
+                                Ver Mais
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projeto 2: TaskSpring -->
+                <article class="project-card">
+                    <img src="./img/Design sem nome (4).png" alt="TaskSpring Cover">
+                  
+                    <div class="card-title-default">
+                        <h3>TaskSpring</h3>
+                        <span>Java</span>
+                    </div>
+
+                    <div class="card-overlay">
+                        <h3>TaskSpring</h3>
+                        <p>API RESTful completa com Spring Boot. Autenticação JWT, Swagger e gerenciamento de tarefas.</p>
+                        <div class="card-tech-list">
+                            <span>Java</span>
+                            <span>Spring Boot</span>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="card-buttons">
+                            <a href="https://github.com/seuusuario/taskspring" target="_blank" class="btn-small-git">
+                                GitHub
+                            </a>
+                            <button class="btn-small-details" onclick="openModal('project2')">
+                                Ver Mais
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Projeto 3: Frontend -->
+                <article class="project-card">
+                    <img src="https://placehold.co/600x450/0f172a/333333?text=UI+Design" alt="Frontend Cover">
+                    
+                    <div class="card-title-default">
+                        <h3>Landing Page</h3>
+                        <span>HTML & CSS</span>
+                    </div>
+
+                    <div class="card-overlay">
+                        <h3>Landing Page</h3>
+                        <p>Interface moderna e responsiva focada em conversão. Utiliza SASS e animações CSS puras.</p>
+                        <div class="card-tech-list">
+                            <span>HTML5</span>
+                            <span>SASS</span>
+                            <span>JS</span>
+                        </div>
+                        <div class="card-buttons">
+                            <a href="#" target="_blank" class="btn-small-git">
+                                GitHub
+                            </a>
+                            <button class="btn-small-details" onclick="openModal('project3')">
+                                Em desenvolvimento
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SKILLS & CERTIFICADOS -->
+        <section id="skills">
+            <div class="skills-certs-container">
+                <div class="skills-column">
+                    <h2>Tecnologias</h2>
+                    <ul class="skills-list">
+                        <li>HTML5 Semântico</li>
+                        <li>CSS3 / Flexbox / Grid</li>
+                        <li>JavaScript ES6+</li>
+                        <li>React.js</li>
+                        <li>TypeScript</li>
+                        <li>Git & GitHub</li>
+                        <li>Tailwind CSS</li>
+                        <li>Figma</li>
+                    </ul>
+                </div>
+                <div class="certs-column">
+                    <h2>Certificações</h2>
+                    <div class="cert-list">
+                        <article class="cert-item">
+                            <h3>Fullstack Developer</h3>
+                            <span>Kenzie Academy Brasil • 2023</span>
+                        </article>
+                        <article class="cert-item">
+                            <h3>JavaScript Avançado</h3>
+                            <span>Udemy • 2024</span>
+                        </article>
+                        <article class="cert-item">
+                            <h3>Web Accessibility (WCAG)</h3>
+                            <span>W3C • 2024</span>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section id="contato">
+            <div class="contact-container">
+                <h2>Vamos Conversar?</h2>
+                <p class="contact-text">
+                    Sou estudante de Desenvolvimento de Sistemas e estou disponível para trabalhar em projetos colaborativos. 
+                    Se você tem um projeto em mente ou quer apenas trocar uma ideia, entre em contato!
+                </p>
+                <div class="social-links">
+                    <!-- Email -->
+                    <a href="mailto:mateusdejesussantoscosta@gmail.com" class="social-btn" aria-label="Enviar Email">
+                        <img src="./icons/email-svgrepo-com.svg" alt="Ícone de Email">
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://linkedin.com/in/mateus-de-santos-costa-a754112ba" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+                        <img src="./icons/linkedin.svg" alt="Ícone do LinkedIn">
+                    </a>
+                    <!-- GitHub -->
+                    <a href="https://github.com/Mateus-denv" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+                        <img src="./icons/github.svg" alt="Ícone do GitHub">
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/_santos474/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+                        <img src="./icons/instagram.svg" alt="Ícone do Instagram">
+                    </a>
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/5571996443369" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp">
+                        <img src="./icons/whatsapp.svg" alt="Ícone do WhatsApp">
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mateus de J. Santos. Todos os direitos reservados.</p>
         </div>
-        <div class="highlight-item">
-          <span class="highlight-number">3+</span>
-          <span class="highlight-label">Projetos</span>
+    </footer>
+
+    <!-- MODAL CONTAINER (Renomeado modalBody para project-details-content para evitar conflitos) -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="project-details-content">
+                <!-- Conteúdo injetado via JS -->
+            </div>
         </div>
-        <div class="highlight-item">
-          <span class="highlight-number">5+</span>
-          <span class="highlight-label">Tecnologias</span>
-        </div>
-      </div>
     </div>
-  </section>
 
-  <section id="projetos">
-    <h3>Projetos</h3>
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">
+        &#8593;
+    </button>
 
-      <div class="project-card">
-        <img src="/toby_parsons-porsche-911-3341697_1920.jpg" alt="Projeto 2">
-        <div class="project-overlay">
-          <h4>Projeto 2</h4>
-          <div class="project-tech">
-            <span>C#</span>
-            <span>.NET</span>
-            <span>SQL</span>
-          </div>
-          <a href="#" class="btn-ver-mais">Ver mais</a>
-        </div>
-      </div>
-      
-      <div class="project-card">
-        <img src="/toby_parsons-porsche-911-3341711_1920.jpg" alt="Projeto 3">
-        <div class="project-overlay">
-          <h4>Projeto 3</h4>
-          <div class="project-tech">
-            <span>HTML</span>
-            <span>CSS</span>
-          </div>
-          <a href="#" class="btn-ver-mais">Ver mais</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    <script src="./scripts/base.js"></script>
+    <script src="./scripts/modal.js"></script>
+  
 
-  <section id="skills">
-    <h3>Hard Skills</h3>
-    <div class="grid">
-      <div class="card">
-        <h4>Frontend</h4>
-        <ul>
-          <li>HTML5 & CSS3</li>
-          <li>JavaScript ES6+</li>
-          <li>Responsive Design</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h4>Backend</h4>
-        <ul>
-          <li>C# / .NET</li>
-          <li>SQL Server</li>
-          <li>RESTful APIs</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h4>Ferramentas</h4>
-        <ul>
-          <li>Git & GitHub</li>
-          <li>Visual Studio</li>
-          <li>VS Code</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h3>Soft Skills</h3>
-    <div class="grid">
-      <div class="card">
-        <ul>
-          <li>Comunicação efetiva</li>
-          <li>Trabalho em equipe</li>
-          <li>Organização e planejamento</li>
-          <li>Aprendizado contínuo</li>
-          <li>Resolução de problemas</li>
-          <li>Adaptabilidade</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="certificados">
-    <h3>Certificados</h3>
-    <div class="grid">
-      <div class="card">
-        <ul>
-          <li>Desenvolvimento de Sistemas — SENAI (em andamento)</li>
-          <li>Lógica de Programação — SENAI</li>
-          <li>Fundamentos de Banco de Dados</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-<section id="contato">
-  <h3>Contato</h3>
-  <div class="contact-info">
-    <p class="contact-intro">
-      Entre em contato comigo através das redes sociais ou por email:
-    </p>
-    
-    <div class="social-links">
-      <a href="https://github.com/seuusuario" target="_blank" class="social-link" aria-label="GitHub">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-        </svg>
-      </a>
-      
-      <a href="https://linkedin.com/in/seuperfil" target="_blank" class="social-link" aria-label="LinkedIn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-        </svg>
-      </a>
-      
-      <a href="https://instagram.com/seuperfil" target="_blank" class="social-link" aria-label="Instagram">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-        </svg>
-      </a>
-
-      <a href="mailto:seuemail@email.com" class="social-link" aria-label="Email">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-  <footer>
-    <p>© 2026 — Desenvolvido por Mateus de J. Santos</p>
-    <p style="margin-top: 10px; font-size: 0.8rem;">console.log("Obrigado pela visita! 🚀");</p>
-  </footer>
-
-    <script src="/scripts/base.js"></script>
 </body>
 </html>
