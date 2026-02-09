@@ -440,7 +440,7 @@ footer { border-top: 1px solid var(--border-color); padding: 2rem 0; text-align:
 .modal-description { color: var(--text-color); margin-bottom: 1.5rem; line-height: 1.7; }
 .modal-features h3 { font-size: 1.1rem; color: var(--text-color); margin-bottom: 0.5rem; }
 .modal-features ul { list-style: none; margin-bottom: 2rem; }
-.modal-features li { color: var(--secondary-text); padding: 0.3rem 0; padding-left: 1.5rem; position: relative; }
+.modal-features li { color: var(--secondary-text); padding: 0.3rem 0; padding-left: 2rem; position: relative; }
 .modal-features li::before { content: '</>'; position: absolute; left: 0; color: var(--accent); }
 
 /* BOTÃO DENTRO DO MODAL */
