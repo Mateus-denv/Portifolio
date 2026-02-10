@@ -62,12 +62,21 @@ window.projectsData = {
             'Agendamento de horário',
             'Gerenciar e iniciar atendimentos',
         ],
-        // Este projeto está em desenvolvimento, então definimos a flag
+        inDevelopment: true
+    },
+    project6: {
+        title: 'MExpress APP',
+        tech: ['C#', 'SQL SERVER', 'ASP.NET MVC', 'ENTITY FRAMEWORK CORE'],
+        description: 'Sistema web de locação de motocicletas desenvolvido em ASP.NET Core MVC, com controle de reservas, gestão de frota, regras de negócio e painel administrativo, focado em mobilidade urbana e turismo.',
+        features: [
+            'Cadastro e login na plataforma',
+            'Agendamento de horário',
+            'Gerenciar e iniciar atendimentos',
+        ],
         inDevelopment: true
     }
 };
 
-// Modal Logic (Gera botões dinamicamente)
 window.openModal = function(projectId) {
     const modal = document.getElementById('projectModal');
     const modalBody = document.getElementById('project-details-content');
