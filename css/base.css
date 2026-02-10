@@ -10,6 +10,11 @@
   --accent: #003cbe;
   --accent-hover: #3b82f6;
   
+  /* Cores Específicas para botões extras */
+  --figma-color: #a259ff; 
+  --deploy-color: #10b981;
+   --dev-color: #f59e0b;
+
   --border-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -108,65 +113,85 @@ header {
 @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
 
 .profile-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-/* ESTILOS DE BOTÃO */
-.btn-primary, .btn-secondary, .btn-github, .btn-small-git, .btn-small-details {
-  position: relative;
-  border: 1px solid #003cbe;
-  color: var(--text-color);
-  background: transparent;
-  padding: 0.9rem 2rem;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  overflow: hidden;
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  text-decoration: none;
-  gap: 0.5rem;
+/* Estilos Base */
+.btn-primary, .btn-secondary, .btn-github, .btn-figma, .btn-deploy, .btn-dev, 
+.btn-small-git, .btn-small-figma, .btn-small-details, .btn-small-dev {
+    position: relative; border: 1px solid var(--accent); color: var(--text-color);
+    background: transparent; padding: 0.9rem 2rem; border-radius: 8px; font-weight: 600;
+    transition: all 0.3s ease; overflow: hidden; z-index: 1; display: inline-flex;
+    align-items: center; justify-content: center; cursor: pointer; text-decoration: none; gap: 0.5rem;
 }
 
-.btn-small-git {
-  padding: 0.5rem 1.2rem;
-  font-size: 0.85rem;
-  border-radius: 20px;
-  background: var(--accent);
-  color: white;
-  border: 1px solid var(--accent);
+/* Botões Pequenos (Cards) */
+.btn-small-git { padding: 0.5rem 1rem; font-size: 0.8rem; border-radius: 20px; background: var(--accent); color: white; border: 1px solid var(--accent); }
+.btn-small-figma { padding: 0.5rem 1rem; font-size: 0.8rem; border-radius: 20px; background: transparent; color: white; border: 1px solid var(--figma-color); }
+.btn-small-details { padding: 0.5rem 1rem; font-size: 0.8rem; border-radius: 20px; background: transparent; color: white; border: 1px solid var(--accent); }
+
+/* Botão Pequeno de Desenvolvimento (NOVO) */
+.btn-small-dev { 
+    padding: 0.5rem 1rem; 
+    font-size: 0.8rem; 
+    border-radius: 20px; 
+    background: transparent; 
+    color: var(--dev-color); 
+    border: 1px solid var(--dev-color);
+    cursor: not-allowed; /* Indica que não é clicável */
+    opacity: 0.8;
 }
 
-.btn-small-details {
-  padding: 0.5rem 1.2rem;
-  font-size: 0.85rem;
-  border-radius: 20px;
-  background: transparent;
-  color: white;
-  border: 1px solid var(--accent);
+/* Botões Grandes (Modal) */
+.btn-figma { border-color: var(--figma-color); color: #fff; }
+.btn-figma:hover { background: var(--figma-color); }
+
+.btn-deploy { border-color: var(--deploy-color); color: #fff; }
+.btn-deploy:hover { background: var(--deploy-color); }
+
+/* Botão Grande de Desenvolvimento (NOVO) */
+.btn-dev { 
+    border-color: var(--dev-color); 
+    color: var(--dev-color);
+    cursor: not-allowed;
+}
+.btn-dev:hover { 
+    background: rgba(245, 158, 11, 0.1); /* Fundo leve no hover */
+    color: var(--dev-color);
+    transform: none; /* Remove efeito de movimento */
+    box-shadow: none;
 }
 
-.btn-primary:after, .btn-secondary:after, .btn-github:after, .btn-small-git:after, .btn-small-details:after {
-  position: absolute; content: ""; width: 0; height: 100%; top: 0; left: 0;
-  direction: rtl; z-index: -1; background: var(--accent);
-  box-shadow: -7px -7px 20px 0px rgba(5, 5, 5, 0.2), -4px -4px 5px 0px rgba(0, 0, 255, 0.1),
-              7px 7px 20px 0px rgba(0, 0, 0, 0.2), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+/* Efeitos de Slide (After) */
+.btn-primary:after, .btn-secondary:after, .btn-github:after, .btn-deploy:after, .btn-small-git:after, .btn-small-details:after {
+    position: absolute; content: ""; width: 0; height: 100%; top: 0; left: 0;
+    direction: rtl; z-index: -1; background: var(--accent);
+    transition: all 0.3s ease;
 }
 
-.btn-primary:hover, .btn-secondary:hover, .btn-github:hover, .btn-small-git:hover, .btn-small-details:hover {
-  color: #ffffff; border-color: var(--accent-hover);
+.btn-small-figma:after, .btn-figma:after {
+    position: absolute; content: ""; width: 0; height: 100%; top: 0; left: 0;
+    direction: rtl; z-index: -1; background: var(--figma-color);
+    transition: all 0.3s ease;
 }
-.btn-primary:hover:after, .btn-secondary:hover:after, .btn-github:hover:after, .btn-small-git:hover:after, .btn-small-details:hover:after {
-  left: auto; right: 0; width: 100%;
+
+.btn-deploy:after {
+    background: var(--deploy-color);
 }
-.btn-primary:active, .btn-secondary:active, .btn-github:active, .btn-small-git:active, .btn-small-details:active { top: 2px; }
+
+/* Hover States */
+.btn-primary:hover, .btn-secondary:hover, .btn-github:hover, .btn-small-git:hover, .btn-small-details:hover { color: #ffffff; border-color: var(--accent-hover); }
+.btn-small-figma:hover, .btn-figma:hover { color: #ffffff; border-color: #c084fc; }
+.btn-small-dev:hover { color: var(--dev-color); border-color: var(--dev-color); background: rgba(245, 158, 11, 0.1); }
+
+.btn-primary:hover:after, .btn-secondary:hover:after, .btn-github:hover:after, .btn-figma:hover:after, .btn-deploy:hover:after, .btn-small-git:hover:after, .btn-small-details:hover:after, .btn-small-figma:hover:after {
+    left: auto; right: 0; width: 100%;
+}
+
+/* Active States */
+.btn-primary:active, .btn-secondary:active, .btn-github:active, .btn-small-git:active, .btn-small-details:active, .btn-small-figma:active { top: 2px; }
 
 .profile-picture {
   width: 350px; height: 350px; border-radius: 50%;
   border: 2px solid var(--accent); object-fit: cover;
-  box-shadow: 0 0 60px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 0 60px rgba(0, 22, 70, 0.315), 0 0 40px rgba(37, 99, 235, 0.3),0 0 20px rgba(37, 99, 235, 0.2);
   animation: float 6s ease-in-out infinite; flex-shrink: 0;
   background-color: #1a1a1a;
 }
@@ -193,6 +218,8 @@ section h2::before {
 .about-text p {
   font-size: 1.1rem; color: var(--secondary-text); margin-bottom: 1.5rem; text-align: justify;
 }
+.about-text strong { color: var(--accent); font-weight: 600; }
+.about-text em { font-style: normal; color: #fff; }
 .about-highlights { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 
 .highlight-item {
@@ -333,6 +360,8 @@ section h2::before {
   display: flex;
   gap: 10px;
   margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* SKILLS & CERTIFICADOS */
@@ -429,8 +458,6 @@ footer { border-top: 1px solid var(--border-color); padding: 2rem 0; text-align:
 }
 .close:hover { color: var(--accent); }
 
-.close { color: var(--secondary-text); float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
-.close:hover { color: var(--accent); }
 .modal-header h2 { margin-bottom: 1rem; color: #ffffff; }
 .modal-tech { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
 .modal-tech span {
@@ -443,8 +470,7 @@ footer { border-top: 1px solid var(--border-color); padding: 2rem 0; text-align:
 .modal-features li { color: var(--secondary-text); padding: 0.3rem 0; padding-left: 2rem; position: relative; }
 .modal-features li::before { content: '</>'; position: absolute; left: 0; color: var(--accent); }
 
-/* BOTÃO DENTRO DO MODAL */
-/* .btn-github reutiliza estilo acima */
+.modal-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
 
 /* BACK TO TOP BUTTON */
 .back-to-top {
@@ -475,15 +501,4 @@ footer { border-top: 1px solid var(--border-color); padding: 2rem 0; text-align:
       padding: 1.5rem; /* Menos padding */
       margin: auto; /* Centraliza */
   }
-  
-  /* Opcional: Ajuste para os cards no mobile se preferir que o overlay fique sempre visível */
-  /* .card-overlay {
-      opacity: 1;
-      transform: translateY(0);
-      background: rgba(0,0,0,0.7);
-  }
-  .card-title-default {
-      opacity: 0;
-  }
-  */
 }
